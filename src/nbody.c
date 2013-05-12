@@ -36,7 +36,7 @@ int main() {
 #ifdef MATRIX
 	/* double vitX, vitY, vitZ; */
 	double uX, uY, uZ;
-	double res, tmp1;
+	double res, tmp1X, tmp1Y, tmp1Z;
 	int tmp2;
 
 	double  rX[npart];
@@ -135,10 +135,14 @@ int main() {
 /* Fin de remplissage de la matrice creuse CSR */
 			}
 			for(l=0;l<npart;l++) {
-				tmp1 = 0.0;
+				tmp1X = 0.0;
+				tmp1Y = 0.0;
+				tmp1Z = 0.0;
 				for(m=m_j[l];m<m_j[l+1];m++) {
 				tmp2 = m_i[l];
-				tmp1 = tmp1 + m_val[l] * rX[tmp2];
+				tmp1X = tmp1X + m_val[l] * rX[tmp2];
+				tmp1Y = tmp1Y + m_val[l] * rY[tmp2];
+				tmp1Z = tmp1Z + m_val[l] * rZ[tmp2];
 				}
 			}
 		rX[i] = rX[i] + deltat * FX / rM[i];
