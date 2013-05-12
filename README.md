@@ -1,4 +1,4 @@
-nbody-matrix-sse-vectorize-papi
-===============================
+test-n-body-impure
+==================
 
-nbody core with matrix / sse / vectorize / papi implementation and instrumentation
+test-n-body impure prototype
