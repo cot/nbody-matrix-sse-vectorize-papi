@@ -4,6 +4,7 @@
 #include <time.h>
 #include <sys/time.h>
 #include <emmintrin.h>
+#include <extrae_user_events.h>
 
 #include "../inc/proto.h"
 
@@ -82,6 +83,8 @@ int main() {
 	PAPI_add_events(event_set, events, 2);
 
 #endif
+
+	Extrae_init();
 
 	gettimeofday(&start, NULL);
         for (i=0;i<npart;i++) {
@@ -207,6 +210,8 @@ int main() {
 	printf("rX[%i] = %g \n",npart-1,rX[npart-1]);
 	printf("rY[%i] = %g \n",1,rY[1]);
 	printf("_________________________________________________________________________\n\n");
+
+	Extrae_fini();
 
 	return EXIT_SUCCESS;
 

@@ -18,6 +18,9 @@ sse: nbody
 papi: CC += -DPAPI -lpapi
 papi: nbody
 
+extrae: CC +=-I$(EXTRAE_HOME)/include -L$(EXTRAE_HOME)/lib $(EXTRAE_HOME)/lib/libpttrace-2.3.2.so -lpapi -lbfd -liberty -lunwind -lpthread
+extrae: matrix
+
 matrix: CC += -DMATRIX -O2 -funroll-loops
 matrix: nbody
 
